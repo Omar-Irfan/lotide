@@ -34,7 +34,7 @@ const eqObjects = function(object1, object2) {
       return false;
     }
   } return true;
-}
+};
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "1", a: "2" };

@@ -36,4 +36,4 @@ assertArraysEqual(results1, ["g","c","t","m","t"]);
 const results2 = map(numbers, number => number*5);
 assertArraysEqual(results2, [5,10,15,20,25]);
 const results3 = map(numStr, str => Number(str));
-assertArraysEqual(results3, [1,2,3])
+assertArraysEqual(results3, [1,2,3]);
