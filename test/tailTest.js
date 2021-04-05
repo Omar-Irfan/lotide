@@ -1,15 +1,16 @@
-const assertEqual = require('../assertEqual');
-const tail = require('../tail')
+const assert = require('chai').assert;
+const tail   = require('../tail');
 
-const brothers = ["Omar", "Taimur", "Ahsan"];
-const olderBrothers = tail(brothers);
-assertEqual(brothers.length, olderBrothers.length);
-assertEqual(olderBrothers.length,2);
-assertEqual(olderBrothers[0], "Taimur");
-assertEqual(olderBrothers[1], "Ahsan");
+describe("#tail", () => {
+  it("returns [Taimur, Ahsan] for [Omar, Taimur, Ahsan]", () => {
+    const brothers = ["Omar", "Taimur", "Ahsan"];
+    assert.deepEqual(tail(brothers), ["Taimur", "Ahsan"])
+  });
+  it("returns [] for [Omar]", () => {
+    assert.deepEqual(tail(["Omar"]), [])
+  });
+  it("returns undefined for []", () => {
+    assert.deepEqual(tail([]), [])
+  });
 
-tail(brothers);
-assertEqual(brothers.length, 3);
-
-console.log(tail([1]));
-console.log(tail([]));
+});
